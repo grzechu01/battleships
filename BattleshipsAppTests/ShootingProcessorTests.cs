@@ -96,5 +96,19 @@
 
             shotPosition.IsShot.ShouldBeTrue();
         }
+
+        [Fact]
+        public void Shot_WhenPositionIsOutsideBoard_ShouldNotAddPosition()
+        {
+            var gameState = _gameInitializer.InitializeGame(Constants.BoardWidth, Constants.BoardHeight, new List<(int shipSize, int numberOfShips)>
+            {
+                (4, 1),
+                (5, 2)
+            });
+
+            gameState = _shootingProcessor.Shot(gameState, (Constants.BoardWidth + 2, Constants.BoardHeight + 3), out _);
+
+            gameState.MissedShots.ShouldBeEmpty();
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace BattleshipsApp.Logic
+﻿using System;
+
+namespace BattleshipsApp.Logic
 {
     public class ApplicationRunner
     {
@@ -27,12 +29,21 @@
 
                 var position = ConsoleDecorator.ReadPosition();
 
-                gameState = _shottingProcessor.Shot(gameState, position, out var shotResult);
-
-                ConsoleDecorator.PrintShotResult(shotResult);
+                if (ValidatePosition(position))
+                {
+                    gameState = _shottingProcessor.Shot(gameState, position, out var shotResult);
+                    ConsoleDecorator.PrintShotResult(shotResult);
+                }
+                else
+                {
+                    ConsoleDecorator.PrintWrongPositions();
+                }
             }
 
             ConsoleDecorator.GameOver();
         }
+
+        private bool ValidatePosition((int X, int Y) position) =>
+            position.X < Constants.BoardWidth && position.Y < Constants.BoardHeight;
     }
 }

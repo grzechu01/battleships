@@ -22,7 +22,7 @@
                     ? ShotResult.Sunk
                     : ShotResult.Hit;
             }
-            else if (!state.MissedShots.Any(p => p.X == position.X && p.Y == position.Y))
+            else if (!state.MissedShots.ContainsPosition(position) && position.X < Constants.BoardWidth && position.Y < Constants.BoardHeight)
                 state.MissedShots.Add(new Position(position.X, position.Y, true));
 
             return state;

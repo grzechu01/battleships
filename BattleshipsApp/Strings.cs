@@ -16,5 +16,6 @@
         public const string COLUMN_LABEL = " {0} ";
         public const string ROW_LABEL = "|{0} ";
         public const string WELCOME_MESSAGE = "Welcome to Battleships";
+        public const string WRONG_COORDINATES = "Please enter correct coordinates, board width is: {0} and board height is: {1}";
     }
 }

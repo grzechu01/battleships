@@ -1,6 +1,8 @@
 ﻿namespace BattleshipsApp.Logic
 {
     using BattleshipsApp.Domain;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public static class ShipExtensions
     {
@@ -16,5 +18,8 @@
                     throw new System.Exception($"Unknown ship, size: {ship.Positions.Count}");
             }
         }
+
+        public static bool ContainsPosition(this List<Position> existingPositions, (int X, int Y) position) =>
+            existingPositions.Any(p => p.X == position.X && p.Y == position.Y);
     }
 }

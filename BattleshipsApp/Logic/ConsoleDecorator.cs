@@ -47,6 +47,12 @@
             Console.WriteLine();
         }
 
+        public static void PrintWrongPositions()
+        {
+            Console.WriteLine(string.Format(Strings.WRONG_COORDINATES, Constants.BoardWidth, Constants.BoardHeight));
+            Console.WriteLine();
+        }
+
         public static void GameOver() =>
             Console.WriteLine(Strings.GAME_OVER);
 
