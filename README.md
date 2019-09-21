@@ -11,6 +11,8 @@ The player enters coordinates of the form “A5”, where "A" is the column and 
 
 To exit, use Ctrl + C.
 
+ Application build process requires .NET Core 2.2 SDK to be installed on your computer.
+
 In order to play, clone repository, go to directory with application ("BattleshipsApp"), run
 
 - dotnet build
