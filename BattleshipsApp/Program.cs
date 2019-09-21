@@ -4,10 +4,7 @@
 
     class Program
     {
-        static void Main(string[] args)
-        {
-            var runner = new ApplicationRunner();
-            runner.RunGame();
-        }
+        static void Main(string[] args) =>
+            new ApplicationRunner().RunGame();
     }
 }

@@ -12,10 +12,8 @@
     {
         private readonly IGameInitializer _gameInitializer;
 
-        public GameInitializerTests()
-        {
+        public GameInitializerTests() =>
             _gameInitializer = new GameInitializer();
-        }
 
         [Theory]
         [InlineData(1, 2)]

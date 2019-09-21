@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BattleshipsApp.Logic
+﻿namespace BattleshipsApp.Logic
 {
     public class ApplicationRunner
     {
